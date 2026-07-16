@@ -1,0 +1,206 @@
+import { useState } from 'react';
+import { Mail, MapPin, Send, MessageSquare, ShieldAlert } from 'lucide-react';
+import SpotlightCard from './SpotlightCard';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('error');
+      return;
+    }
+    setStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setStatus(''), 4000);
+  };
+
+  const contactInfo = [
+    { label: 'DIRECT NODE // MAIL', value: 'vaibhavmi2026@gmail.com', href: 'mailto:vaibhavmi2026@gmail.com', icon: Mail, color: 'text-blue-400' },
+    { label: 'GEOLOCATION // ADDR', value: 'surat , gujrat , India', href: null, icon: MapPin, color: 'text-purple-400' },
+    { label: 'X (TWITTER) MODULE', value: '@tech_mishra', href: 'https://x.com/tech_mishra', icon: MessageSquare, color: 'text-cyan-400' },
+  ];
+
+  return (
+    <section id="contact" className="relative w-full py-32 bg-[#08080a] overflow-hidden border-t border-white/5">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_1000px_at_center,rgba(59,130,246,0.02),transparent_80%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center mb-20 animate-fade-in" data-aos="fade-up">
+          <span className="text-xs font-mono tracking-[0.3em] text-blue-500 uppercase block mb-3 font-semibold">
+            // COMMUNICATIONS HUB
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white uppercase">
+            GET IN TOUCH
+          </h2>
+          <div className="mt-4 h-[1.5px] w-20 bg-blue-500 mx-auto rounded-full" />
+          <p className="mt-6 text-xs md:text-sm text-white/40 tracking-wide font-mono uppercase">
+            OPEN SEED PORT // DISPATCHING PROJECT COLLABORATIONS AND MESSAGES.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          
+          {/* Details Column */}
+          <div className="lg:col-span-5 flex flex-col gap-6" data-aos="fade-right">
+            <SpotlightCard className="p-8 md:p-10 flex-1 flex flex-col justify-between" glowColor="rgba(59, 130, 246, 0.05)">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 border-b border-white/5 pb-4">
+                  <ShieldAlert className="h-5 w-5 text-blue-400" />
+                  <span className="text-xs font-mono tracking-widest text-white/80 uppercase">
+                    direct_gate.log
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-bold tracking-tight text-white uppercase leading-snug">
+                  INITIATING DISPATCH FOR FREELANCE CONTRACTS.
+                </h3>
+                
+                <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
+                  My port is open to full-time nodes, contract architectures, and collaborative sprints. Dispatch a log via the console inputs, or connect directly through verified messaging nodes.
+                </p>
+              </div>
+
+              {/* Action items list */}
+              <div className="space-y-4 mt-8">
+                {contactInfo.map((info, idx) => {
+                  const Icon = info.icon;
+                  const Component = info.href ? 'a' : 'div';
+                  return (
+                    <Component
+                      key={idx}
+                      href={info.href}
+                      target={info.href && info.href.startsWith('http') ? '_blank' : undefined}
+                      rel={info.href && info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className={`flex items-center gap-4 p-4 bg-white/[0.01] border border-white/5 rounded-2xl transition-all duration-300 ${
+                        info.href ? 'hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-0.5 cursor-pointer' : ''
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl bg-slate-950 border border-white/5 ${info.color}`}>
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="text-[9px] font-mono text-white/30 uppercase tracking-[0.15em]">{info.label}</div>
+                        <div className="text-xs font-semibold text-white mt-0.5">{info.value}</div>
+                      </div>
+                    </Component>
+                  );
+                })}
+              </div>
+            </SpotlightCard>
+          </div>
+
+          {/* Form Column */}
+          <div className="lg:col-span-7 flex" data-aos="fade-left" data-aos-delay="200">
+            <SpotlightCard className="p-8 md:p-10 flex-1 flex flex-col justify-between" glowColor="rgba(139, 92, 246, 0.05)">
+              <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col justify-between">
+                <div className="space-y-6">
+                  
+                  {/* Name and Email */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Your Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
+                        placeholder="USER_NAME"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
+                        placeholder="EMAIL_HOST"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Subject */}
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
+                      placeholder="COLLABORATION_SUBJECT"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Message Log</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows="5"
+                      className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300 resize-none"
+                      placeholder="DISPATCH_MESSAGE_BODY"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Submit button */}
+                <div className="pt-6">
+                  <button
+                    type="submit"
+                    className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 font-mono text-[10px] font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer tracking-widest"
+                  >
+                    SEND LOG FILE
+                    <Send className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </button>
+                </div>
+
+                {/* Status Notice overlays */}
+                {status === 'success' && (
+                  <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 font-mono text-[10px] tracking-wide text-center">
+                    MSG DISPATCHED SUCCESS // WE WILL RESPOND SHORTLY.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 font-mono text-[10px] tracking-wide text-center">
+                    ERR RESOLUTION // PLEASE FILL ALL CORE MANDATORY LOGS.
+                  </div>
+                )}
+              </form>
+            </SpotlightCard>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
