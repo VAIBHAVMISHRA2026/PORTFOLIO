@@ -194,46 +194,41 @@ const Contact = () => {
                   </div>
 
                   {/* Social Buttons row in blank space */}
-                  <div className="pt-4 border-t border-white/5">
-                    <span className="text-[8px] font-mono tracking-[0.2em] text-white/20 uppercase block mb-3">
-                      // QUICK CONNECT CHANNELS
-                    </span>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      <a 
-                        href="https://instagram.com/mishra_vaibhav_2026" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-pink-500/10 border border-white/5 hover:border-pink-500/20 rounded-xl text-[10px] text-white/50 hover:text-pink-400 font-mono transition-all duration-300 cursor-pointer"
-                      >
-                        <InstagramIcon className="h-3.5 w-3.5" />
-                        <span>INSTAGRAM</span>
-                      </a>
-                      <a 
-                        href="https://github.com/VAIBHAVMISHRA2026" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-blue-500/10 border border-white/5 hover:border-blue-500/20 rounded-xl text-[10px] text-white/50 hover:text-blue-400 font-mono transition-all duration-300 cursor-pointer"
-                      >
-                        <Github className="h-3.5 w-3.5" />
-                        <span>GITHUB</span>
-                      </a>
-                      <a 
-                        href="https://www.linkedin.com/in/vaibhav-mishra-b063163b2/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-blue-600/10 border border-white/5 hover:border-blue-600/20 rounded-xl text-[10px] text-white/50 hover:text-blue-400 font-mono transition-all duration-300 cursor-pointer"
-                      >
-                        <Linkedin className="h-3.5 w-3.5" />
-                        <span>LINKEDIN</span>
-                      </a>
-                      <a 
-                        href="mailto:vaibhavmi2026@gmail.com" 
-                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/20 rounded-xl text-[10px] text-white/50 hover:text-emerald-400 font-mono transition-all duration-300 cursor-pointer"
-                      >
-                        <Mail className="h-3.5 w-3.5" />
-                        <span>EMAIL</span>
-                      </a>
-                    </div>
+                  <div className="pt-6 border-t border-white/5 flex justify-center gap-5">
+                    <a 
+                      href="https://instagram.com/mishra_vaibhav_2026" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-white/[0.01] hover:bg-pink-500/10 border border-white/5 hover:border-pink-500/20 rounded-full text-white/40 hover:text-pink-400 shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(236,72,153,0.15)] transition-all duration-300 hover:scale-110 cursor-pointer"
+                      title="Instagram"
+                    >
+                      <InstagramIcon className="h-5 w-5" />
+                    </a>
+                    <a 
+                      href="https://github.com/VAIBHAVMISHRA2026" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-white/[0.01] hover:bg-blue-500/10 border border-white/5 hover:border-blue-500/20 rounded-full text-white/40 hover:text-blue-400 shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 hover:scale-110 cursor-pointer"
+                      title="GitHub"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/vaibhav-mishra-b063163b2/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-white/[0.01] hover:bg-blue-600/10 border border-white/5 hover:border-blue-600/20 rounded-full text-white/40 hover:text-blue-400 shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] transition-all duration-300 hover:scale-110 cursor-pointer"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a 
+                      href="mailto:vaibhavmi2026@gmail.com" 
+                      className="w-12 h-12 flex items-center justify-center bg-white/[0.01] hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/20 rounded-full text-white/40 hover:text-emerald-400 shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 hover:scale-110 cursor-pointer"
+                      title="Email"
+                    >
+                      <Mail className="h-5.5 w-5.5" />
+                    </a>
                   </div>
                 </div>
 
