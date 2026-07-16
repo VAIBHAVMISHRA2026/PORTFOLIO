@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Activity } from 'lucide-react';
 
+const WhatsAppIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} width="1em" height="1em">
+    <path d="M12.012 2c-5.506 0-9.988 4.478-9.988 9.984a9.92 9.92 0 0 0 1.392 5.048L2 22l5.14-1.348a9.882 9.882 0 0 0 4.872 1.28c5.506 0 9.988-4.478 9.988-9.984C22 6.478 17.518 2 12.012 2zm4.736 14.194c-.262.744-1.28 1.348-2.072 1.436-.54.062-1.242.096-3.666-.902-3.096-1.28-5.076-4.428-5.23-4.634-.156-.206-1.272-1.696-1.272-3.23 0-1.536.804-2.29 1.092-2.584.288-.294.63-.368.84-.368.21 0 .42.002.604.01.196.008.462-.074.72.548.266.64.912 2.222.99 2.38.08.158.132.342.026.548-.104.208-.158.334-.316.518-.156.182-.328.406-.468.544-.156.156-.32.326-.138.64.182.312.81 1.336 1.736 2.164.928.828 1.71 1.084 2.024 1.242.312.156.494.13.678-.08.184-.21.802-.93.102-1.244-.7-.314-1.168-.142-1.378.07z"/>
+  </svg>
+);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,14 +63,16 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Right System Info Overlay (Desktop only) */}
-          <div className="hidden lg:flex items-center gap-4 font-mono text-[9px] text-white/30 tracking-[0.15em] border-l border-white/10 pl-6 select-none">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
-            </span>
-            <span>SYS // ONLINE</span>
-          </div>
+          {/* Right WhatsApp Overlay (Desktop only) */}
+          <a 
+            href="https://wa.me/917069035478" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-2 font-mono text-[9px] text-white/40 hover:text-emerald-400 tracking-[0.15em] border-l border-white/10 pl-6 transition-colors duration-300 select-none cursor-pointer"
+          >
+            <WhatsAppIcon className="h-4.5 w-4.5 text-emerald-500 animate-pulse" />
+            <span>+91 7069035478</span>
+          </a>
 
           {/* Mobile Menu Button */}
           <button
