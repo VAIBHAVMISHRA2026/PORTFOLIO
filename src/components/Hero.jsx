@@ -190,7 +190,7 @@ const Hero = () => {
 
           {/* Overlay 2: Left-Aligned Vision 01 Card */}
           <div 
-            className="absolute left-6 md:left-12 lg:left-24 max-w-lg w-full flex items-center justify-start"
+            className="absolute inset-x-6 md:left-12 lg:left-24 md:max-w-lg flex items-center justify-center md:justify-start"
             style={{ 
               opacity: visionOpacity, 
               transform: `translateY(${visionTranslateY}px)`,
@@ -211,7 +211,7 @@ const Hero = () => {
 
           {/* Overlay 3: Right-Aligned Fusion 02 Card */}
           <div 
-            className="absolute right-6 md:right-12 lg:right-24 max-w-lg w-full flex items-center justify-end"
+            className="absolute inset-x-6 md:right-12 lg:right-24 md:max-w-lg flex items-center justify-center md:justify-end"
             style={{ 
               opacity: fusionOpacity, 
               transform: `translateY(${fusionTranslateY}px)`,
