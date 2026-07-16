@@ -138,14 +138,6 @@ const Hero = () => {
   }
   const fusionTranslateY = (0.72 - Math.min(0.85, Math.max(0.60, scrollProgress))) * 150;
 
-  // Calculate canvas translation to shift the face opposite to the active card (desktop only)
-  let canvasTranslateX = 0;
-  if (scrollProgress >= 0.22 && scrollProgress < 0.58) {
-    canvasTranslateX = 18; // Translate right (opposite to Vision 01 card which is on the left)
-  } else if (scrollProgress >= 0.58 && scrollProgress < 0.95) {
-    canvasTranslateX = -18; // Translate left (opposite to Fusion 02 card which is on the right)
-  }
-
   return (
     <section
       ref={containerRef}
@@ -198,7 +190,7 @@ const Hero = () => {
 
           {/* Overlay 2: Left-Aligned Vision 01 Card */}
           <div
-            className="absolute inset-x-6 md:left-12 lg:left-24 md:max-w-lg flex items-center justify-center md:justify-start"
+            className="absolute inset-x-6 md:left-12 lg:left-24 md:right-auto md:max-w-lg flex items-center justify-center md:justify-start"
             style={{
               opacity: visionOpacity,
               transform: `translateY(${visionTranslateY}px)`,
@@ -219,7 +211,7 @@ const Hero = () => {
 
           {/* Overlay 3: Right-Aligned Fusion 02 Card */}
           <div
-            className="absolute inset-x-6 md:right-12 lg:right-24 md:max-w-lg flex items-center justify-center md:justify-end"
+            className="absolute inset-x-6 md:left-auto md:right-12 lg:right-24 md:max-w-lg flex items-center justify-center md:justify-end"
             style={{
               opacity: fusionOpacity,
               transform: `translateY(${fusionTranslateY}px)`,
