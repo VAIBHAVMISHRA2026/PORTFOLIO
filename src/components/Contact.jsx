@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { Mail, MapPin, Send, MessageSquare, ShieldAlert } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
+import { Github, Linkedin } from './BrandIcons';
 
 const WhatsAppIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} width="1em" height="1em">
     <path d="M12.012 2c-5.506 0-9.988 4.478-9.988 9.984a9.92 9.92 0 0 0 1.392 5.048L2 22l5.14-1.348a9.882 9.882 0 0 0 4.872 1.28c5.506 0 9.988-4.478 9.988-9.984C22 6.478 17.518 2 12.012 2zm4.736 14.194c-.262.744-1.28 1.348-2.072 1.436-.54.062-1.242.096-3.666-.902-3.096-1.28-5.076-4.428-5.23-4.634-.156-.206-1.272-1.696-1.272-3.23 0-1.536.804-2.29 1.092-2.584.288-.294.63-.368.84-.368.21 0 .42.002.604.01.196.008.462-.074.72.548.266.64.912 2.222.99 2.38.08.158.132.342.026.548-.104.208-.158.334-.316.518-.156.182-.328.406-.468.544-.156.156-.32.326-.138.64.182.312.81 1.336 1.736 2.164.928.828 1.71 1.084 2.024 1.242.312.156.494.13.678-.08.184-.21.802-.93.102-1.244-.7-.314-1.168-.142-1.378.07z"/>
+  </svg>
+);
+
+const InstagramIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={props.className} width="1.1em" height="1.1em">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
 
@@ -182,6 +191,49 @@ const Contact = () => {
                       placeholder="Type your message here"
                       required
                     />
+                  </div>
+
+                  {/* Social Buttons row in blank space */}
+                  <div className="pt-4 border-t border-white/5">
+                    <span className="text-[8px] font-mono tracking-[0.2em] text-white/20 uppercase block mb-3">
+                      // QUICK CONNECT CHANNELS
+                    </span>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      <a 
+                        href="https://instagram.com/mishra_vaibhav_2026" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-pink-500/10 border border-white/5 hover:border-pink-500/20 rounded-xl text-[10px] text-white/50 hover:text-pink-400 font-mono transition-all duration-300 cursor-pointer"
+                      >
+                        <InstagramIcon className="h-3.5 w-3.5" />
+                        <span>INSTAGRAM</span>
+                      </a>
+                      <a 
+                        href="https://github.com/VAIBHAVMISHRA2026" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-blue-500/10 border border-white/5 hover:border-blue-500/20 rounded-xl text-[10px] text-white/50 hover:text-blue-400 font-mono transition-all duration-300 cursor-pointer"
+                      >
+                        <Github className="h-3.5 w-3.5" />
+                        <span>GITHUB</span>
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/in/vaibhav-mishra-b063163b2/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-blue-600/10 border border-white/5 hover:border-blue-600/20 rounded-xl text-[10px] text-white/50 hover:text-blue-400 font-mono transition-all duration-300 cursor-pointer"
+                      >
+                        <Linkedin className="h-3.5 w-3.5" />
+                        <span>LINKEDIN</span>
+                      </a>
+                      <a 
+                        href="mailto:vaibhavmi2026@gmail.com" 
+                        className="flex items-center justify-center gap-2 py-3 px-3 bg-white/[0.01] hover:bg-emerald-500/10 border border-white/5 hover:border-emerald-500/20 rounded-xl text-[10px] text-white/50 hover:text-emerald-400 font-mono transition-all duration-300 cursor-pointer"
+                      >
+                        <Mail className="h-3.5 w-3.5" />
+                        <span>EMAIL</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
