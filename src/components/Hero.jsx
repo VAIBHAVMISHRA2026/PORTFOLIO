@@ -26,15 +26,17 @@ const Hero = () => {
     videoRef.current = video;
 
     let animId;
-    let offsetX = 0;
-    let offsetY = 0;
+    let currentOffsetX = 0;
+    let currentOffsetY = 0;
+    let targetOffsetX = 0;
+    let targetOffsetY = 0;
 
     const render = () => {
       if (video.readyState >= 2) {
-        // Smoothly interpolate current time to target scrub time (prevent stutter)
+        // Seek the video only if the difference is greater than 15ms (prevent micro-seeking jitter)
         const diff = targetTime.current - currentTime.current;
-        if (Math.abs(diff) > 0.005) {
-          currentTime.current += diff * 0.12;
+        if (Math.abs(diff) > 0.015) {
+          currentTime.current += diff * 0.1;
           video.currentTime = currentTime.current;
         }
 
@@ -45,9 +47,13 @@ const Hero = () => {
         const w = video.videoWidth * scale;
         const h = video.videoHeight * scale;
 
-        // Draw centered on canvas with hover offset
-        const x = (canvas.width - w) / 2 + offsetX;
-        const y = (canvas.height - h) / 2 + offsetY;
+        // Smoothly interpolate mouse parallax offsets (prevent snapping/vibration)
+        currentOffsetX += (targetOffsetX - currentOffsetX) * 0.08;
+        currentOffsetY += (targetOffsetY - currentOffsetY) * 0.08;
+
+        // Draw centered on canvas with smooth hover offset
+        const x = (canvas.width - w) / 2 + currentOffsetX;
+        const y = (canvas.height - h) / 2 + currentOffsetY;
 
         ctx.drawImage(video, x, y, w, h);
       }
@@ -79,7 +85,9 @@ const Hero = () => {
       const scrollTop = window.scrollY - parentTop;
       const scrollMax = parentHeight - window.innerHeight;
 
-      const fraction = Math.min(1, Math.max(0, scrollTop / scrollMax));
+      // Round fraction to 3 decimal places to ignore sub-pixel scroll jitter
+      const rawFraction = Math.min(1, Math.max(0, scrollTop / scrollMax));
+      const fraction = Math.round(rawFraction * 1000) / 1000;
       setScrollProgress(fraction);
 
       if (video.duration) {
@@ -93,8 +101,8 @@ const Hero = () => {
     const onMouseMove = (e) => {
       const cx = e.clientX - window.innerWidth / 2;
       const cy = e.clientY - window.innerHeight / 2;
-      offsetX = cx * 0.03;
-      offsetY = cy * 0.03;
+      targetOffsetX = cx * 0.025;
+      targetOffsetY = cy * 0.025;
     };
 
     window.addEventListener('mousemove', onMouseMove);
