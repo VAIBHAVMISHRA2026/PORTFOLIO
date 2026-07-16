@@ -6,16 +6,16 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'ALL' },
-    { id: 'fullstack', name: 'FULL-STACK' },
-    { id: 'ai', name: 'AI & SYSTEM' },
+    { id: 'all', name: 'All' },
+    { id: 'fullstack', name: 'Full-Stack' },
+    { id: 'ai', name: 'AI & Learning' },
   ];
 
   const projectsData = [
     {
       index: '01.',
       title: 'GRMANAGER.IN',
-      description: 'Lead developer and founder node of grmanager.in. Built as a high-fidelity startup platform. Optimizes workspace administration, provides user dashboard metrics, and coordinates real-time client management tools.',
+      description: 'Created grmanager.in from scratch. Built the full-stack system to help manage workspaces, track dashboard statistics, and coordinate client queries in real-time.',
       category: 'fullstack',
       tags: ['Next.js', 'Express.js', 'MongoDB', 'Supabase', 'Redis'],
       github: 'https://github.com/VAIBHAVMISHRA2026',
@@ -23,12 +23,12 @@ const Projects = () => {
       gradient: 'from-blue-500/20 to-indigo-500/10',
       borderGradient: 'from-blue-500/30 to-cyan-500/10',
       glow: 'rgba(59, 130, 246, 0.15)',
-      meta: 'STARTUP CORE // FULL-STACK MANAGEMENT'
+      meta: 'Startup Project'
     },
     {
       index: '02.',
-      title: 'AI / ML LAB SANDBOX',
-      description: 'Orchestrating model analysis nodes using Python. Custom pipelines analyzing local datasets, testing regression models, and integrating API text models (Gemini API) for automation loops.',
+      title: 'AI & Machine Learning Projects',
+      description: 'Building Python scripts to analyze datasets, test machine learning models, and connect Google Gemini API for automated task processes.',
       category: 'ai',
       tags: ['Python', 'TensorFlow', 'Gemini SDK', 'Scikit-Learn'],
       github: 'https://github.com/VAIBHAVMISHRA2026',
@@ -36,12 +36,12 @@ const Projects = () => {
       gradient: 'from-indigo-500/20 to-purple-500/10',
       borderGradient: 'from-indigo-500/30 to-purple-500/10',
       glow: 'rgba(99, 102, 241, 0.15)',
-      meta: 'INTELLIGENCE RESEARCH // EXPERIMENTAL NODES'
+      meta: 'AI/ML Project'
     },
     {
       index: '03.',
-      title: 'CYBERSECURITY LAB NODE',
-      description: 'Future trajectory playground analyzing network protocols, auditing package controllers, and setting up encryption layers for local APIs.',
+      title: 'Cybersecurity Practice Lab',
+      description: 'Learning to analyze network traffic, audit code for security issues, and set up encryption keys for secure APIs.',
       category: 'ai',
       tags: ['Linux Shell', 'Bash Scripts', 'Wireshark', 'Crypto APIs'],
       github: 'https://github.com/VAIBHAVMISHRA2026',
@@ -49,7 +49,7 @@ const Projects = () => {
       gradient: 'from-purple-500/20 to-pink-500/10',
       borderGradient: 'from-purple-500/30 to-pink-500/10',
       glow: 'rgba(168, 85, 247, 0.15)',
-      meta: 'INFRASTRUCTURE DEFENSE // FUTURE LAB'
+      meta: 'Security Studies'
     },
   ];
 
@@ -69,14 +69,14 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 border-b border-white/5 pb-10" data-aos="fade-up">
           <div>
             <span className="text-xs font-mono tracking-[0.3em] text-blue-500 uppercase block mb-3 font-semibold">
-              // RECENT DEV ARCHIVE
+              // MY WORK
             </span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white uppercase">
               Featured Projects
             </h2>
           </div>
           <p className="text-xs md:text-sm text-white/40 max-w-sm tracking-wide leading-relaxed font-mono">
-            SHIPPING PRODUCTION CODEBASES BUILT ON FULL-STACK UTILITIES AND CLOUD DEPLOYMENTS.
+            A list of full-stack projects and educational repositories.
           </p>
         </div>
 

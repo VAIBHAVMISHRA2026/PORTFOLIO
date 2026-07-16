@@ -4,26 +4,26 @@ import SpotlightCard from './SpotlightCard';
 const Experience = () => {
   const experiences = [
     {
-      role: 'FOUNDER & CHIEF DEVELOPER',
-      company: 'GRMANAGER.IN // TECH STARTUP',
+      role: 'Founder & Lead Developer',
+      company: 'grmanager.in (Tech Startup)',
       duration: '2024 - PRESENT',
-      description: 'Bootstrapped and launched grmanager.in. Designed mobile responsive web dashboard layouts, integrated database relational nodes, optimized express backend controllers, and managed client feedback loops.',
+      description: 'Launched my startup grmanager.in. Designed the responsive web dashboard, connected the database, optimized the backend server, and worked on user feedback.',
       icon: Briefcase,
       color: 'text-blue-400 bg-blue-500/10 border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]',
     },
     {
-      role: 'B.TECH IN COMPUTER ENGINEERING',
-      company: 'UNDERGRADUATE PATH // 3RD YEAR',
+      role: 'B.Tech in Computer Engineering',
+      company: '3rd Year Undergraduate Student',
       duration: '2023 - PRESENT',
-      description: 'Acquiring theoretical frameworks in software engineering, database schemas, object-oriented compilation, and network configurations.',
+      description: 'Learning database systems, software engineering principles, coding practices, and computer networks.',
       icon: GraduationCap,
       color: 'text-purple-400 bg-purple-500/10 border-purple-500/20 shadow-[0_0_15px_rgba(139,92,246,0.1)]',
     },
     {
-      role: 'EARLY PROGRAMMING EVOLUTION',
-      company: 'SELF-DIRECTED SYSTEM NODE',
+      role: 'Started Coding Journey',
+      company: 'Self-Taught',
       duration: '2022 - 2023',
-      description: 'Initiated coding journey starting from Web Development architectures. Branched out to mobile app pipelines with Flutter & Dart, and currently learning artificial intelligence applications.',
+      description: 'Started learning web development from online tutorials. Later, learned mobile app development using Flutter and Dart, and started exploring AI.',
       icon: GraduationCap,
       color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]',
     },
@@ -37,17 +37,16 @@ const Experience = () => {
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in" data-aos="fade-up">
           <span className="text-xs font-mono tracking-[0.3em] text-blue-500 uppercase block mb-3 font-semibold">
-            // TIMELINE NODES REGISTERED
+            // MY TIMELINE
           </span>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white uppercase">
             MY JOURNEY
           </h2>
           <div className="mt-4 h-[1.5px] w-20 bg-blue-500 mx-auto rounded-full" />
           <p className="mt-6 text-xs md:text-sm text-white/40 tracking-wide font-mono uppercase">
-            LOGGING PREVIOUS WORK CONTRACTS AND INTELLECTUAL MILESTONES.
+            A timeline of my startup experience, engineering education, and early coding.
           </p>
         </div>
 

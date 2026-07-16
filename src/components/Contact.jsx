@@ -27,9 +27,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { label: 'DIRECT NODE // MAIL', value: 'vaibhavmi2026@gmail.com', href: 'mailto:vaibhavmi2026@gmail.com', icon: Mail, color: 'text-blue-400' },
-    { label: 'GEOLOCATION // ADDR', value: 'surat , gujrat , India', href: null, icon: MapPin, color: 'text-purple-400' },
-    { label: 'X (TWITTER) MODULE', value: '@tech_mishra', href: 'https://x.com/tech_mishra', icon: MessageSquare, color: 'text-cyan-400' },
+    { label: 'Email Address', value: 'vaibhavmi2026@gmail.com', href: 'mailto:vaibhavmi2026@gmail.com', icon: Mail, color: 'text-blue-400' },
+    { label: 'Location', value: 'Surat, Gujarat, India', href: null, icon: MapPin, color: 'text-purple-400' },
+    { label: 'X (Twitter)', value: '@tech_mishra', href: 'https://x.com/tech_mishra', icon: MessageSquare, color: 'text-cyan-400' },
   ];
 
   return (
@@ -43,14 +43,14 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in" data-aos="fade-up">
           <span className="text-xs font-mono tracking-[0.3em] text-blue-500 uppercase block mb-3 font-semibold">
-            // COMMUNICATIONS HUB
+            // CONTACT ME
           </span>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white uppercase">
             GET IN TOUCH
           </h2>
           <div className="mt-4 h-[1.5px] w-20 bg-blue-500 mx-auto rounded-full" />
           <p className="mt-6 text-xs md:text-sm text-white/40 tracking-wide font-mono uppercase">
-            OPEN SEED PORT // DISPATCHING PROJECT COLLABORATIONS AND MESSAGES.
+            Send a message to collaborate or ask a question.
           </p>
         </div>
 
@@ -63,16 +63,16 @@ const Contact = () => {
                 <div className="flex items-center gap-3 border-b border-white/5 pb-4">
                   <ShieldAlert className="h-5 w-5 text-blue-400" />
                   <span className="text-xs font-mono tracking-widest text-white/80 uppercase">
-                    direct_gate.log
+                    contact_info.log
                   </span>
                 </div>
                 
                 <h3 className="text-2xl font-bold tracking-tight text-white uppercase leading-snug">
-                  INITIATING DISPATCH FOR FREELANCE CONTRACTS.
+                  Let&apos;s work together!
                 </h3>
                 
                 <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
-                  My port is open to full-time nodes, contract architectures, and collaborative sprints. Dispatch a log via the console inputs, or connect directly through verified messaging nodes.
+                  I am open to full-time roles, contract work, and collaboration opportunities. Send a message using the form, or reach out directly via email or social links.
                 </p>
               </div>
 
@@ -122,7 +122,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="USER_NAME"
+                        placeholder="Enter your name"
                         required
                       />
                     </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="EMAIL_HOST"
+                        placeholder="Enter your email"
                         required
                       />
                     </div>
@@ -151,13 +151,13 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300"
-                      placeholder="COLLABORATION_SUBJECT"
+                      placeholder="Enter subject"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Message Log</label>
+                    <label htmlFor="message" className="text-[9px] font-mono tracking-widest text-white/40 uppercase">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -165,7 +165,7 @@ const Contact = () => {
                       onChange={handleChange}
                       rows="5"
                       className="w-full px-4 py-3 bg-[#08080a] border border-white/5 rounded-xl text-white font-mono text-xs focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/20 transition-all duration-300 resize-none"
-                      placeholder="DISPATCH_MESSAGE_BODY"
+                      placeholder="Type your message here"
                       required
                     />
                   </div>
@@ -177,7 +177,7 @@ const Contact = () => {
                     type="submit"
                     className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 font-mono text-[10px] font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer tracking-widest"
                   >
-                    SEND LOG FILE
+                    SEND MESSAGE
                     <Send className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </div>
@@ -185,12 +185,12 @@ const Contact = () => {
                 {/* Status Notice overlays */}
                 {status === 'success' && (
                   <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 font-mono text-[10px] tracking-wide text-center">
-                    MSG DISPATCHED SUCCESS // WE WILL RESPOND SHORTLY.
+                    Message Sent Successfully! I will reply shortly.
                   </div>
                 )}
                 {status === 'error' && (
                   <div className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 font-mono text-[10px] tracking-wide text-center">
-                    ERR RESOLUTION // PLEASE FILL ALL CORE MANDATORY LOGS.
+                    Error: Please fill in all fields.
                   </div>
                 )}
               </form>

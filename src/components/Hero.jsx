@@ -184,7 +184,7 @@ const Hero = () => {
             <div className="h-[1.5px] bg-gradient-to-r from-transparent via-white/20 to-transparent w-48 my-3" />
             
             <p className="text-[10px] md:text-xs tracking-[0.2em] font-mono text-white/40 uppercase animate-pulse">
-              SCROLL DOWN TO INITIATE EXPERIENCE
+              SCROLL DOWN TO VIEW MY PORTFOLIO
             </p>
           </div>
 
@@ -199,12 +199,12 @@ const Hero = () => {
           >
             <SpotlightCard className="group p-8 md:p-10 shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5 relative overflow-hidden bg-black/40 backdrop-blur-md">
               <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-blue-500 to-indigo-500" />
-              <div className="text-[9px] font-mono tracking-[0.25em] text-blue-500 mb-3 uppercase">// VISION.01</div>
+              <div className="text-[9px] font-mono tracking-[0.25em] text-blue-500 mb-3 uppercase">// WHAT I BUILD</div>
               <h3 className="text-xl md:text-3xl font-extrabold tracking-tight text-white mb-4 uppercase leading-tight">
-                Web &amp; App Architectures
+                Web &amp; Mobile Development
               </h3>
               <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
-                From scalable React web platforms to native Flutter app compiles, engineering optimized pipelines and deploying active start-up systems like grmanager.in.
+                Building responsive websites using React and Next.js, and native mobile applications using Flutter. This includes active development on my startup, grmanager.in.
               </p>
             </SpotlightCard>
           </div>
@@ -220,12 +220,12 @@ const Hero = () => {
           >
             <SpotlightCard className="group p-8 md:p-10 shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/5 relative overflow-hidden bg-black/40 backdrop-blur-md" glowColor="rgba(139, 92, 246, 0.1)">
               <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-indigo-500 to-purple-500" />
-              <div className="text-[9px] font-mono tracking-[0.25em] text-purple-400 mb-3 uppercase">// FUSION.02</div>
+              <div className="text-[9px] font-mono tracking-[0.25em] text-purple-400 mb-3 uppercase">// FOCUS AREA</div>
               <h3 className="text-xl md:text-3xl font-extrabold tracking-tight text-white mb-4 uppercase leading-tight">
-                AI/ML &amp; Cybersecurity
+                AI Integration &amp; Security
               </h3>
               <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
-                Integrating AI automation libraries for rapid processing loops, while aligning focus toward securing API routes and protecting applications against threats.
+                Integrating AI features to automate tasks in web applications, while learning how to secure servers, APIs, and databases from online threats.
               </p>
             </SpotlightCard>
           </div>

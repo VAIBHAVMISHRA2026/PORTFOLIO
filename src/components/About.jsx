@@ -20,14 +20,14 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6" data-aos="fade-up">
           <div className="space-y-4">
             <span className="text-xs font-mono tracking-[0.35em] text-blue-500 uppercase font-semibold block">
-              // PROFILE SPECTRAL DATA
+              // MY BACKGROUND
             </span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase">
               ABOUT ME
             </h2>
           </div>
           <p className="text-xs md:text-sm text-white/40 max-w-sm font-mono tracking-wide leading-relaxed">
-            SYSTEM.USER_DATA // DECRYPTING ACADEMIC RECORDS AND PERSONAL CONTEXT.
+            A quick overview of my education, startups, and coding interest areas.
           </p>
         </div>
 
@@ -40,20 +40,20 @@ const About = () => {
                 <div className="flex items-center gap-3 border-b border-white/5 pb-4">
                   <Code2 className="h-5 w-5 text-blue-400" />
                   <span className="text-xs font-mono tracking-widest text-white/80 uppercase">
-                    philosophy.log
+                    my_story.log
                   </span>
                 </div>
                 
                 <h3 className="text-2xl font-bold tracking-tight text-white leading-snug">
-                  Transitioning from Web &amp; App Development to AI/ML &amp; Cybersecurity.
+                  Full Stack Developer &amp; Startup Founder.
                 </h3>
                 
                 <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
-                  My journey started in web development, creating custom layouts and APIs. I then expanded into mobile application development using Flutter &amp; Dart, building custom mobile solutions. 
+                  I started my coding journey in Web Development, building clean layouts and server APIs. Later, I expanded into mobile app development using Flutter and Dart to build custom mobile solutions.
                 </p>
                 
                 <p className="text-xs md:text-sm text-white/50 leading-relaxed font-light">
-                  Currently, I am diving deep into AI &amp; Machine Learning pipelines, with the long-term career ambition of designing and securing web/app architectures in Cybersecurity.
+                  Currently, I am learning AI and Machine Learning models while focusing on my long-term goal of building secure applications in Cybersecurity.
                 </p>
               </div>
 
@@ -61,16 +61,16 @@ const About = () => {
               <div className="border-t border-white/5 pt-6 mt-8 space-y-4">
                 <h4 className="text-xs font-mono tracking-widest text-white/80 uppercase flex items-center gap-2">
                   <GraduationCap className="h-4 w-4 text-blue-400" />
-                  ACADEMIC_DEGREES
+                  Education &amp; Milestones
                 </h4>
                 <div className="space-y-3 pl-6 relative before:absolute before:left-1 before:top-2 before:bottom-2 before:w-[1px] before:bg-white/10">
                   <div>
                     <div className="text-xs font-bold text-white uppercase">B.Tech in Computer Engineering</div>
-                    <div className="text-[10px] text-white/40 font-mono mt-0.5">UNDERGRADUATE RECORD // 3RD YEAR // ACTIVE</div>
+                    <div className="text-[10px] text-white/40 font-mono mt-0.5">3rd Year Student // Currently Studying</div>
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white uppercase">Startup Incubation Node</div>
-                    <div className="text-[10px] text-white/40 font-mono mt-0.5">FOUNDED GRMANAGER.IN // ACTIVE DEVELOPMENT</div>
+                    <div className="text-xs font-bold text-white uppercase">My Startup</div>
+                    <div className="text-[10px] text-white/40 font-mono mt-0.5">Founded grmanager.in // Active Development</div>
                   </div>
                 </div>
               </div>

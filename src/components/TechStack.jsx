@@ -6,9 +6,9 @@ const TechStack = () => {
   const [activeTab, setActiveTab] = useState('languages');
 
   const categories = [
-    { id: 'languages', name: 'Languages', icon: Code2, subtext: 'SYS.LANG' },
-    { id: 'frameworks', name: 'Frameworks & SDKs', icon: Globe, subtext: 'APP.FRAMEWORK' },
-    { id: 'databases', name: 'Databases & BaaS', icon: Database, subtext: 'DATA.STOR' },
+    { id: 'languages', name: 'Languages', icon: Code2, subtext: 'Programming' },
+    { id: 'frameworks', name: 'Frameworks & SDKs', icon: Globe, subtext: 'Development' },
+    { id: 'databases', name: 'Databases & BaaS', icon: Database, subtext: 'Storage' },
   ];
 
   const techItems = {
@@ -48,7 +48,7 @@ const TechStack = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6 relative" data-aos="fade-up">
           <div className="space-y-4">
             <span className="text-xs font-mono tracking-[0.35em] text-blue-500 uppercase font-semibold block">
-              // TECHNOLOGICAL SPECTRUM
+              // MY SKILLS
             </span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase">
               TECH STACK
@@ -56,7 +56,7 @@ const TechStack = () => {
           </div>
           <div className="flex items-center gap-3 self-start md:self-auto px-4 py-2 rounded-full bg-white/[0.02] border border-white/5 font-mono text-[10px] text-emerald-400">
             <Activity className="h-3 w-3 animate-pulse text-emerald-500" />
-            CORE STATUS: ACTIVE // FREQ: 5.2GHZ // VER: 1.0
+            LANGUAGES, FRAMEWORKS &amp; DATABASES
           </div>
         </div>
 
@@ -66,7 +66,7 @@ const TechStack = () => {
           <div className="lg:col-span-4 flex flex-col gap-3 relative z-10 border-b lg:border-b-0 lg:border-r border-white/5 pb-8 lg:pb-0 lg:pr-8" data-aos="fade-right">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[9px] font-mono text-white/30 uppercase tracking-[0.2em] block">
-                CONSOLE MODULE VECTOR
+                Categories
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-ping"></span>
             </div>
