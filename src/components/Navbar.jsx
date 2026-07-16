@@ -46,7 +46,7 @@ const Navbar = () => {
             className="font-mono text-xs md:text-sm tracking-[0.25em] text-white hover:text-blue-400 transition-colors duration-300 font-black uppercase"
             style={{ textShadow: '0 0 15px rgba(255, 255, 255, 0.1)' }}
           >
-            M.V.R // Portfolio
+            VAIBHAV MISHRA // DEV
           </a>
 
           {/* Desktop Nav */}
