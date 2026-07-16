@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Mail, MapPin, Send, MessageSquare, ShieldAlert } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
 
+const WhatsAppIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} width="1em" height="1em">
+    <path d="M12.012 2c-5.506 0-9.988 4.478-9.988 9.984a9.92 9.92 0 0 0 1.392 5.048L2 22l5.14-1.348a9.882 9.882 0 0 0 4.872 1.28c5.506 0 9.988-4.478 9.988-9.984C22 6.478 17.518 2 12.012 2zm4.736 14.194c-.262.744-1.28 1.348-2.072 1.436-.54.062-1.242.096-3.666-.902-3.096-1.28-5.076-4.428-5.23-4.634-.156-.206-1.272-1.696-1.272-3.23 0-1.536.804-2.29 1.092-2.584.288-.294.63-.368.84-.368.21 0 .42.002.604.01.196.008.462-.074.72.548.266.64.912 2.222.99 2.38.08.158.132.342.026.548-.104.208-.158.334-.316.518-.156.182-.328.406-.468.544-.156.156-.32.326-.138.64.182.312.81 1.336 1.736 2.164.928.828 1.71 1.084 2.024 1.242.312.156.494.13.678-.08.184-.21.802-.93.102-1.244-.7-.314-1.168-.142-1.378.07z"/>
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,6 +27,13 @@ const Contact = () => {
       setStatus('error');
       return;
     }
+
+    // Construct mailto link to open in user's default mail client with values filled
+    const mailtoLink = `mailto:vaibhavmi2026@gmail.com?subject=${encodeURIComponent(formData.subject || 'Portfolio Contact Form')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    // Redirect to open the mail client
+    window.location.href = mailtoLink;
+
     setStatus('success');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setTimeout(() => setStatus(''), 4000);
@@ -28,6 +41,7 @@ const Contact = () => {
 
   const contactInfo = [
     { label: 'Email Address', value: 'vaibhavmi2026@gmail.com', href: 'mailto:vaibhavmi2026@gmail.com', icon: Mail, color: 'text-blue-400' },
+    { label: 'WhatsApp', value: '+91 7069035478', href: 'https://wa.me/917069035478', icon: WhatsAppIcon, color: 'text-emerald-400' },
     { label: 'Location', value: 'Surat, Gujarat, India', href: null, icon: MapPin, color: 'text-purple-400' },
     { label: 'X (Twitter)', value: '@tech_mishra', href: 'https://x.com/tech_mishra', icon: MessageSquare, color: 'text-cyan-400' },
   ];
