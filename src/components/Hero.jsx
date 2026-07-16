@@ -26,10 +26,6 @@ const Hero = () => {
     videoRef.current = video;
 
     let animId;
-    let currentOffsetX = 0;
-    let currentOffsetY = 0;
-    let targetOffsetX = 0;
-    let targetOffsetY = 0;
 
     const render = () => {
       if (video.readyState >= 2) {
@@ -47,13 +43,9 @@ const Hero = () => {
         const w = video.videoWidth * scale;
         const h = video.videoHeight * scale;
 
-        // Smoothly interpolate mouse parallax offsets (prevent snapping/vibration)
-        currentOffsetX += (targetOffsetX - currentOffsetX) * 0.08;
-        currentOffsetY += (targetOffsetY - currentOffsetY) * 0.08;
-
-        // Draw centered on canvas with smooth hover offset
-        const x = (canvas.width - w) / 2 + currentOffsetX;
-        const y = (canvas.height - h) / 2 + currentOffsetY;
+        // Draw centered on canvas (completely fixed, no cursor displacement)
+        const x = (canvas.width - w) / 2;
+        const y = (canvas.height - h) / 2;
 
         ctx.drawImage(video, x, y, w, h);
       }
@@ -97,21 +89,10 @@ const Hero = () => {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Hover mouse tilt offset drift
-    const onMouseMove = (e) => {
-      const cx = e.clientX - window.innerWidth / 2;
-      const cy = e.clientY - window.innerHeight / 2;
-      targetOffsetX = cx * 0.025;
-      targetOffsetY = cy * 0.025;
-    };
-
-    window.addEventListener('mousemove', onMouseMove);
-
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
 
