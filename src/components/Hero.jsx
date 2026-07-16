@@ -6,7 +6,7 @@ const Hero = () => {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const videoRef = useRef(null);
-  
+
   const targetTime = useRef(0);
   const currentTime = useRef(0);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,7 +44,7 @@ const Hero = () => {
         const scale = Math.max(canvas.width / video.videoWidth, canvas.height / video.videoHeight);
         const w = video.videoWidth * scale;
         const h = video.videoHeight * scale;
-        
+
         // Draw centered on canvas with hover offset
         const x = (canvas.width - w) / 2 + offsetX;
         const y = (canvas.height - h) / 2 + offsetY;
@@ -71,14 +71,14 @@ const Hero = () => {
     const onScroll = () => {
       const parent = containerRef.current;
       if (!parent) return;
-      
+
       const parentTop = parent.offsetTop;
       const parentHeight = parent.offsetHeight;
-      
+
       // Calculate scroll coordinates relative to sticky container
       const scrollTop = window.scrollY - parentTop;
       const scrollMax = parentHeight - window.innerHeight;
-      
+
       const fraction = Math.min(1, Math.max(0, scrollTop / scrollMax));
       setScrollProgress(fraction);
 
@@ -138,19 +138,27 @@ const Hero = () => {
   }
   const fusionTranslateY = (0.72 - Math.min(0.85, Math.max(0.60, scrollProgress))) * 150;
 
+  // Calculate canvas translation to shift the face opposite to the active card (desktop only)
+  let canvasTranslateX = 0;
+  if (scrollProgress >= 0.22 && scrollProgress < 0.58) {
+    canvasTranslateX = 18; // Translate right (opposite to Vision 01 card which is on the left)
+  } else if (scrollProgress >= 0.58 && scrollProgress < 0.95) {
+    canvasTranslateX = -18; // Translate left (opposite to Fusion 02 card which is on the right)
+  }
+
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="hero" 
+      id="hero"
       className="relative w-full h-[500vh] bg-[#08080a]"
     >
       {/* Sticky Fullscreen Container */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
-        
+
         {/* Background Canvas (Video scrubbing is rendered here) */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <canvas ref={canvasRef} className="w-full h-full object-cover block" />
-          
+
           {/* Cyberpunk overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#08080a]/30 via-transparent to-[#08080a] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_1000px_at_center,rgba(59,130,246,0.03),transparent_80%)] pointer-events-none" />
@@ -159,40 +167,40 @@ const Hero = () => {
 
         {/* Content Overlays Layer */}
         <div className="absolute inset-0 z-10 w-full h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center pointer-events-none">
-          
+
           {/* Overlay 1: Centered Hero Title */}
-          <div 
+          <div
             className="absolute flex flex-col items-center justify-center text-center select-none w-full"
-            style={{ 
-              opacity: heroOpacity, 
+            style={{
+              opacity: heroOpacity,
               transform: `translateY(${heroTranslateY}px)`,
               pointerEvents: heroOpacity > 0.1 ? 'auto' : 'none'
             }}
           >
-            <span 
+            <span
               className="text-[9px] md:text-[10px] font-mono tracking-[0.4em] text-blue-500 uppercase glow-text mb-4 inline-flex items-center gap-2 bg-blue-500/5 px-4 py-1.5 rounded-full border border-blue-500/10"
               style={{ textShadow: '0 0 10px rgba(59, 130, 246, 0.3)' }}
             >
               <Sparkles className="h-3.5 w-3.5 animate-spin duration-3000 text-blue-400" />
               Full Stack Developer &amp; AI Enthusiast
             </span>
-            
+
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white uppercase leading-none mb-6">
               MISHRA VAIBHAV RAJEEV
             </h1>
-            
+
             <div className="h-[1.5px] bg-gradient-to-r from-transparent via-white/20 to-transparent w-48 my-3" />
-            
+
             <p className="text-[10px] md:text-xs tracking-[0.2em] font-mono text-white/40 uppercase animate-pulse">
               SCROLL DOWN TO VIEW MY PORTFOLIO
             </p>
           </div>
 
           {/* Overlay 2: Left-Aligned Vision 01 Card */}
-          <div 
+          <div
             className="absolute inset-x-6 md:left-12 lg:left-24 md:max-w-lg flex items-center justify-center md:justify-start"
-            style={{ 
-              opacity: visionOpacity, 
+            style={{
+              opacity: visionOpacity,
               transform: `translateY(${visionTranslateY}px)`,
               pointerEvents: visionOpacity > 0.1 ? 'auto' : 'none'
             }}
@@ -210,10 +218,10 @@ const Hero = () => {
           </div>
 
           {/* Overlay 3: Right-Aligned Fusion 02 Card */}
-          <div 
+          <div
             className="absolute inset-x-6 md:right-12 lg:right-24 md:max-w-lg flex items-center justify-center md:justify-end"
-            style={{ 
-              opacity: fusionOpacity, 
+            style={{
+              opacity: fusionOpacity,
               transform: `translateY(${fusionTranslateY}px)`,
               pointerEvents: fusionOpacity > 0.1 ? 'auto' : 'none'
             }}
